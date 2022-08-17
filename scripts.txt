@@ -1,0 +1,54 @@
+en
+config t
+vlan 10
+name cctv
+vlan 10
+name ip_phone
+vlan 20
+name cctv
+vlan 30
+name pis
+ex
+ex
+wr
+
+
+
+//**ACSS SWITCH TRUNK PORT
+config t
+int f0/24
+switchport mode trunk
+ex
+wr
+
+// DISTIBUTION SWITCH TRUNK PORT
+interface GigabitEthernet1/1/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+
+
+en
+config t
+int range f0/01-2
+switchport mode access
+switchport access vlan 10
+ex
+
+int range f0/03-4
+switchport mode access
+switchport access vlan 30
+ex
+
+int range f0/05-6
+switchport mode access
+switchport access vlan 20
+ex
+ex
+wr
+
+
+
+tanveerp1994@gmail.com
+Metro@12345
+CONFIDNTIAL
++91-8329542359
