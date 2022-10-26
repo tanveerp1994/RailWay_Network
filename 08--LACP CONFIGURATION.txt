@@ -1,0 +1,55 @@
+++++switch01 LACP configurtion+++++
+
+en
+config t
+int range g0/0-1
+channel-protocol lacp
+channel-group 1 mode active
+ex
+ex
+wr
+
+
+++++switch02 LACP configurtion+++++
+
+****lacp of switch-02 with switch01*****
+int range g0/1
+channel-protocol lacp
+channel-group 1 mode passive
+ex
+int range g0/2
+channel-protocol lacp
+channel-group 1 mode passive
+ex
+do reload
+yes
+confirm
+
+*****LACP switch02 with switch03******
+
+en
+config t
+int range g0/0-1
+channel-protocol lacp
+channel-group 2 mode active
+ex
+ex
+wr
+
+
+
+++++switch03 LACP configurtion+++++
+
+
+****lacp of switch-03 with switch02*****
+int range g0/1
+channel-protocol lacp
+channel-group 2 mode passive
+ex
+int range g0/2
+channel-protocol lacp
+channel-group 2 mode passive
+ex
+do reload
+yes
+confirm

@@ -1,0 +1,33 @@
+en
+config t
+
+int range f0/01-2
+switchport mode access
+switchport access vlan 10
+ex
+
+int range f0/03-4
+switchport mode access
+switchport access vlan 20
+ex
+
+int range f0/05-6
+switchport mode access
+switchport access vlan 30
+ex
+
+ex
+wr
+
+int range g0/0/0-1
+interface range GigabitEthernet0/0-1
+
+
+en
+config t
+int range f0/21-22
+switchport mode access
+switchport access vlan 80
+ex
+ex
+wr

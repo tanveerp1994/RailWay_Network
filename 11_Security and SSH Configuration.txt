@@ -1,0 +1,26 @@
+en
+config t
+hostname stn_sw01
+enable password 1234
+line con 0
+password 1234
+login
+ex
+ex
+banner motd #No UNAuthorized Access...Punishable offence #
+service password-encryption
+no ip domain-lookup
+
+
+########## configure SSH ############
+en
+config t
+username root password 1234
+ip domain name root01.net
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+line vty 0 15
+login local 
+transport input ssh
+exit
+do wr

@@ -1,0 +1,37 @@
+dont configure vlan.....directly configure subinterfaces as below in router
+
+++++++++ Router-01 configiration ++++++++++++
+Router(config)#int g0/3/0.10
+Router(config-subif)#encapsulation dot1q 10
+Router(config-subif)#ip address 172.16.32.2 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#int g0/3/0.20
+Router(config-subif)#encapsulation dot1q 20
+Router(config-subif)#ip address 172.16.18.2 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#int g0/3/0.30
+Router(config-subif)#encapsulation dot1q 30
+Router(config-subif)#ip address 172.16.50.2 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#
+
+++++++++ Router-02 configiration ++++++++++++
+Router(config)#int g0/3/0.10
+Router(config-subif)#encapsulation dot1q 10
+Router(config-subif)#ip address 172.16.32.3 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#int g0/3/0.20
+Router(config-subif)#encapsulation dot1q 20
+Router(config-subif)#ip address 172.16.18.3 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#int g0/3/0.30
+Router(config-subif)#encapsulation dot1q 30
+Router(config-subif)#ip address 172.16.50.3 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#ex
+Router(config)#

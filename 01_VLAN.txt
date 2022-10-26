@@ -1,0 +1,23 @@
+
+++++ VLAN CONFIGURATION ON SWITCH++++++
+
+en
+config t
+vlan 10
+name cctv
+vlan 20
+name pis
+vlan 30
+name scada
+ex
+ex
+wr
+
+++++++VLAN CONFIGURATION ON ROUTER+++++
+en
+vlan database
+vlan 10 name cctv
+vlan 20 name pis
+vlan 30 name scada
+ex 
+wr

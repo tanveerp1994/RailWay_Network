@@ -1,0 +1,51 @@
+++++++++++++++++++ROUTER-01CONFIGURATION++++++++++++++++
+
+
+****SUBINTERFACE******
+en
+config t
+int g0/3/0.80
+encapsulation dot1q 80
+ip address 172.16.2.2 255.255.255.0
+no shutdown
+ex
+ex
+wr
+*****HSRP*******
+en
+config t
+int g0/3/0.80
+standby 2 ip 172.16.2.1
+standby 2 priority 150
+standby 2 preempt
+ex
+ex
+wr
+
+
+
+
+
+++++++++++++++++++ROUTER-02 CONFIGURATION++++++++++++++++
+
+
+****SUBINTERFACE******
+en
+config t
+int g0/3/0.80
+encapsulation dot1q 80
+ip address 172.16.2.3 255.255.255.0
+no shutdown
+ex
+ex
+wr
+*****HSRP*******
+en
+config t
+int g0/3/0.80
+standby 2 ip 172.16.2.1
+standby 2 priority 100
+standby 2 preempt
+ex
+ex
+wr

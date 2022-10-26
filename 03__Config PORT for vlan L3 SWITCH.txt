@@ -1,0 +1,21 @@
+en
+config t
+
+int range g1/0/01-2
+switchport mode access
+switchport access vlan 10
+ex
+
+int range g1/0/03-4
+switchport mode access
+switchport access vlan 20
+ex
+
+int range g1/0/05-6
+switchport mode access
+switchport access vlan 30
+ex
+
+ex
+wr
+

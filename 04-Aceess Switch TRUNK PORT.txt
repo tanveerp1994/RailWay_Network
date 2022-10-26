@@ -1,0 +1,29 @@
+en
+config t
+int range f0/23-24
+switchport mode trunk
+no shutdown
+ex
+ex
+wr
+
+
+en
+config t
+int range g1/0/23-24
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+ex
+ex
+wr
+
+en
+config t
+int range g1/1/1-4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+ex
+ex
+wr

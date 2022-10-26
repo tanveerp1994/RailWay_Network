@@ -1,0 +1,6 @@
+en 
+config t
+ntp server 172.16.50.101
+ex
+ex
+wr

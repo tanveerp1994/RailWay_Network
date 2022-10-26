@@ -1,0 +1,51 @@
+HIGHER VALUE OF PRIORITY WILL MAKE ROUTER ACTIVE PRIMARY AND
+LOWER PRIORITY VALUE WILL MAKE IT STANDBY SECONDARY IN CASE OF FAILOVER.
+
+VRRP/HSRP/GLBP ARE FAMILY MEMBER OF FHRP{FIRST HOP REDUNDANCY} PROTOCOL.
+
+++++++ ROUTER-01 CONFIGURATION ++++++++
+
+en
+config t
+int g0/3/0.10
+standby 2 ip 172.16.32.1
+standby 2 priority 150
+standby 2 preempt
+ex
+int g0/3/0.20
+standby 2 ip 172.16.18.1
+standby 2 priority 150
+standby 2 preempt
+ex
+int g0/3/0.30
+standby 2 ip 172.16.50.1
+standby 2 priority 150
+standby 2 preempt
+ex
+ex
+wr
+
+
+++++++ ROUTER-02 CONFIGURATION ++++++++
+
+en
+config t
+int g0/3/0.10
+standby 2 ip 172.16.32.1
+standby 2 priority 100
+standby 2 preempt
+ex
+int g0/3/0.20
+standby 2 ip 172.16.18.1
+standby 2 priority 100
+standby 2 preempt
+ex
+int g0/3/0.30
+standby 2 ip 172.16.50.1
+standby 2 priority 100
+standby 2 preempt
+ex
+ex
+wr
+
+
