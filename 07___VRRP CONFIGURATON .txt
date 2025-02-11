@@ -1,41 +1,32 @@
 
 
-++++++ ROUTER-01 CONFIGURATION ++++++++
+
 
 en
 config t
 int g0/3/0.10
 VRRP 2 ip 172.16.32.1
-VRRP 2 priority 150
+
 ex
 int g0/3/0.20
 VRRP 2 ip 172.16.18.1
-VRRP 2 priority 150
+
 ex
 int g0/3/0.30
 VRRP 2 ip 172.16.50.1
-VRRP priority 150
-ex
-ex
-wr
 
-
-++++++ ROUTER-02 CONFIGURATION ++++++++
 
 en
 config t
 int g0/3/0.10
 VRRP 2 ip 172.16.32.1
-VRRP 2 priority 100
-ex
+
 int g0/3/0.20
 VRRP 2 ip 172.16.18.1
-VRRP 2 priority 100
-ex
+
 int g0/3/0.30
 VRRP 2 ip 172.16.50.1
-VRRP 2 priority 100
-ex
+
 ex
 wr
 
